@@ -1,0 +1,24 @@
+//reverse words in String
+class Solution {
+    public String reverseWords(String s) {
+        StringBuilder word = new StringBuilder();
+        StringBuilder ans = new StringBuilder();
+        s = s.trim();
+        for(int i = s.length()-1 ; i >=0 ; i--){
+            char ch = s.charAt(i);
+
+            if(ch ==' '){
+                if(word.length()>0){
+                   ans.append(word);
+                   ans.append(" ");
+                   word.setLength(0);
+                }
+            }
+            else{
+                word.insert(0,ch);
+            }
+        }
+        ans.append(word);
+        return ans.toString().trim();
+    }
+}
